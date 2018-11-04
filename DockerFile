@@ -1,5 +1,5 @@
 # Stage 1
- FROM microsoft/aspnetcore-build AS builder
+ FROM microsoft/dotnet:2.1.302-sdk-stretch AS builder
  WORKDIR /source
 
 RUN echo "deb http://deb.debian.org/debian jessie main" |  tee /etc/apt/sources.list.d/debian-official-stable.list \
