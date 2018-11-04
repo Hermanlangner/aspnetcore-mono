@@ -5,8 +5,6 @@ jobs:
   include:
     - stage: build docker image
       script:
-      - docker build -t hammerhdl/netcore-mono .
-      - docker images
-      - docker tag hammerhdl/netcore-mono hammerhdl/netcore-mono
       - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - docker build -t hammerhdl/netcore-mono .
       - docker push hammerhdl/netcore-mono
