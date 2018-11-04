@@ -5,6 +5,8 @@ jobs:
   include:
     - stage: build docker image
       script:
+      - echo $(PWD)
+      - ls
       - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - docker build -t hammerhdl/netcore-mono ./Dockerfile
       - docker push hammerhdl/netcore-mono
